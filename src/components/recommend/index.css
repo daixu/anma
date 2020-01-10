@@ -98,3 +98,13 @@
     padding: 0 12.5px;
     box-sizing: border-box;
 }
+
+.recommend-book-info {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.recommend-list-content ul {
+    width: 100%;
+}

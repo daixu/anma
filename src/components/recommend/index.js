@@ -25,7 +25,7 @@ class Recommend extends React.Component {
                                     return (
                                         <li key={item.get('bookid')} className="home-book-li">
                                             <a href="https://www.baidu.com">
-                                                <div className="book-info">
+                                                <div className="recommend-book-info">
                                                     <img src={item.get('bookcover')} className="home-book-cover" alt=""/>
 
                                                     <div className="home-book-content">

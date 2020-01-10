@@ -69,3 +69,57 @@
     display: block;
     overflow: hidden;
 }
+
+.choice-more-ul {
+    width: 100%;
+    height: 100%;
+    padding: 0 12.5px;
+    box-sizing: border-box;
+}
+
+.choice-more-li a {
+    width: 100%;
+    height: 100%;
+    padding: 14px 0 14px 0;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.layout-flow-more {
+    margin: 10px 0;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.layout-flow-more a {
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+}
+
+.layout-flow-more a cite {
+    padding: 0 20px;
+    border-radius: 3px;
+    background-color: #eee;
+    color: #333;
+    font-style: normal;
+    display: inline-block;
+}
+
+.choice-more-book-info {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.choice-more-list-content ul {
+    width: 100%;
+}
+
+.choice-more-li {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #f0f2f5;
+    display: list-item;
+}

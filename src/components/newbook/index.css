@@ -48,3 +48,28 @@
     height: 5.5rem;
     margin: 5px auto;
 }
+
+.strong-list-a {
+    display: block;
+}
+
+.story-title {
+    font-size: .8325rem;
+    color: #404046;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 4.25rem;
+    margin: 0 auto;
+}
+
+.story-name {
+    font-size: 13px;
+    color: #a0a0a0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 4.25rem;
+    margin: 0 auto;
+}

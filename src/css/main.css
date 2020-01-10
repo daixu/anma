@@ -126,69 +126,14 @@ a {
     background-position: 0 3.5px;
 }
 
-.book-info {
-    width: 100%;
-    position: relative;
-    height: 100%;
-}
-
 ul li img {
     display: inline-block;
     border: none;
 }
 
-.author {
-    font-size: 13px;
-    color: #969ba3;
-    display: inline-block;
-}
-
-.author-cont {
-    display: inline-block;
-    bottom: 0;
-}
-
 ul {
     display: inline-block;
     background-color: #fff;
-}
-
-.book-ul {
-    width: 100%;
-    height: 100%;
-    padding: 0 12.5px;
-    box-sizing: border-box;
-}
-
-.book-li {
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid #f0f2f5;
-    display: list-item;
-}
-
-.book-li a {
-    width: 100%;
-    height: 100%;
-    padding: 14px 0 14px 0;
-    box-sizing: border-box;
-}
-
-.recommend-list-content ul {
-    width: 100%;
-}
-
-.rank-ul {
-    width: 100%;
-    height: 100%;
-    padding: 0 12.5px 0 12.5px;
-    box-sizing: border-box;
-}
-
-.rank-list ul li {
-    width: 100%;
-    height: 55px;
-    border-bottom: 1px solid #f0f2f5;
 }
 
 .book-name {
@@ -198,96 +143,5 @@ ul {
     color: #404047;
     margin-left: 11px;
     font-weight: 600;
-    vertical-align: top;
-}
-
-.book-author {
-    font-size: 13px !important;
-    color: #a6a6a6 !important;
-    margin-left: 15.5px !important;
-    line-height: 60px;
-    vertical-align: top;
-    display: inline-block;
-}
-
-
-.strong-list-a {
-    display: block;
-}
-
-.story-title {
-    font-size: .8325rem;
-    color: #404046;
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 4.25rem;
-    margin: 0 auto;
-}
-
-.story-name {
-    font-size: 13px;
-    color: #a0a0a0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 4.25rem;
-    margin: 0 auto;
-}
-
-.layout-flow-more {
-    margin: 10px 0;
-    text-align: center;
-    color: #999;
-    font-size: 14px;
-}
-
-.layout-flow-more a {
-    height: 32px;
-    line-height: 32px;
-    display: inline-block;
-}
-
-.layout-flow-more a cite {
-    padding: 0 20px;
-    border-radius: 3px;
-    background-color: #eee;
-    color: #333;
-    font-style: normal;
-    display: inline-block;
-}
-
-.book-rand-a {
-    font-size: 13px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-height: 1.5rem;
-    height: 3rem;
-    letter-spacing: 0.5px;
-    color: #969ba3;
-    margin-top: 8px;
-}
-
-.book-rand-content {
-    color: #969ba3;
-    display: inline;
-    vertical-align: top;
-}
-
-.test-div {
-    font-size: 13px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-height: 18px;
-    position: relative;
-    -webkit-animation: width-change 8s ease infinite;
-}
-
-.test-content {
-    color:#000;
-    display: inline;
     vertical-align: top;
 }

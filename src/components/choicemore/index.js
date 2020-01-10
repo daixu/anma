@@ -19,14 +19,14 @@ class ChoiceMore extends React.Component {
                 </div>
 
                 <div className="recommend-list">
-                    <div className="recommend-list-content">
-                        <ul className="book-ul">
+                    <div className="choice-more-list-content">
+                        <ul className="choice-more-ul">
                             {
                                 this.props.data.map(function (item) {
                                     return (
-                                        <li key={item.get('bookid')} className="book-li">
+                                        <li key={item.get('bookid')} className="choice-more-li">
                                             <a href="https://www.baidu.com">
-                                                <div className="book-info">
+                                                <div className="choice-more-book-info">
                                                     <img src={item.get('bookcover')} className="choice-more-cover" alt=""/>
 
                                                     <div className="choice-more-content">
