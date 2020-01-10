@@ -9,7 +9,7 @@ class Recommend extends React.Component {
             <div>
                 <div className="recommend-header">
                     <div className="recommend-title">
-                        <a href="http://www.baidu.com" className="recommend-a">
+                        <a href="http://www.baidu.com" className="next">
                             <p>强力推荐</p>
                             <span className="arrow">
                                 <img src={arrow} alt="next"/>

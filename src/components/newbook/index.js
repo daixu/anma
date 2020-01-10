@@ -8,7 +8,7 @@ class NewBook extends React.Component {
             <div>
                 <div className="new-book-recommend">
                     <div className="new-book-title">
-                        <a href="http://www.baidu.com" className="recommend-a">
+                        <a href="http://www.baidu.com" className="next">
                             <p>新书上架</p>
                             <span className="arrow">
                             <img src={arrow} alt=""/>

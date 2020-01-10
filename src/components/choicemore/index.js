@@ -7,9 +7,9 @@ class ChoiceMore extends React.Component {
     render() {
         return (
             <div>
-                <div className="choice-more-recommend">
+                <div className="choice-more-header">
                     <div className="choice-more-title">
-                        <a href="http://www.baidu.com" className="recommend-a">
+                        <a href="http://www.baidu.com" className="next-a">
                             <p>大家都在看</p>
                             <span className="arrow">
                                 <img src={arrow} alt="next"/>

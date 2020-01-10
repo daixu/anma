@@ -9,7 +9,7 @@ class BestsellerList extends React.Component {
             <div>
                 <div className="home-bestseller-recommend">
                     <div className="home-bestseller-title">
-                        <a href="http://www.baidu.com" className="recommend-a">
+                        <a href="http://www.baidu.com" className="next">
                             <p>畅销书单</p>
                             <span className="arrow">
                             <img src={arrow} alt=""/>
