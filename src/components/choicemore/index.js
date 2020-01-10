@@ -1,13 +1,14 @@
 import React from 'react';
-import arrow from "../static/arrow.png";
+import arrow from "../../static/arrow.png";
+import './index.css';
 
 class ChoiceMore extends React.Component {
 
     render() {
         return (
             <div>
-                <div className="recommend">
-                    <div className="recommend-title">
+                <div className="choice-more-recommend">
+                    <div className="choice-more-title">
                         <a href="http://www.baidu.com" className="recommend-a">
                             <p>大家都在看</p>
                             <span className="arrow">
@@ -26,14 +27,14 @@ class ChoiceMore extends React.Component {
                                         <li key={item.get('bookid')} className="book-li">
                                             <a href="https://www.baidu.com">
                                                 <div className="book-info">
-                                                    <img src={item.get('bookcover')} className="book-cover" alt=""/>
+                                                    <img src={item.get('bookcover')} className="choice-more-cover" alt=""/>
 
-                                                    <div className="book-content">
-                                                        <p className="book-title">{item.get('bookname')}</p>
-                                                        <span className="author-cont">
-                                                            <span className="author">{item.get('author')}&nbsp;著</span>
-                                                            <span className="book-rand-a">{item.get('synopsis')}</span>
-                                                        </span>
+                                                    <div className="choice-more-content">
+                                                        <p className="choice-more-title-1">{item.get('bookname')}</p>
+                                                        <span className="choice-more-author">{item.get('author')}&nbsp;著</span>
+                                                        <div className="choice-more-rand-a">
+                                                            <div className="choice-more-rand-content">{item.get('synopsis')}</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>

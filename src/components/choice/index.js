@@ -1,9 +1,10 @@
-import React from 'react'
-import book_stored from "../static/book_stored.png";
-import ancientc from "../static/ancientc.png";
-import heartae from "../static/heartae.png";
-import listc from "../static/listc.png";
-import rechargec from "../static/rechargec.png";
+import React from 'react';
+import book_stored from "../../static/book_stored.png";
+import ancientc from "../../static/ancientc.png";
+import heartae from "../../static/heartae.png";
+import listc from "../../static/listc.png";
+import rechargec from "../../static/rechargec.png";
+import './index.css';
 
 class Choice extends React.Component {
     render() {

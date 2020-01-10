@@ -1,12 +1,13 @@
 import React from 'react';
-import arrow from "../static/arrow.png";
+import arrow from "../../static/arrow.png";
+import './index.css';
 
 class NewBook extends React.Component {
     render() {
         return (
             <div>
-                <div className="recommend">
-                    <div className="recommend-title">
+                <div className="new-book-recommend">
+                    <div className="new-book-title">
                         <a href="http://www.baidu.com" className="recommend-a">
                             <p>新书上架</p>
                             <span className="arrow">

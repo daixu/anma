@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 import arrow from "../../static/arrow.png";
 import list_icon from "../../static/list-icon0.png";
+import './index.css';
 
 class BestsellerList extends React.Component {
     render() {
         return (
             <div>
-                <div className="recommend">
-                    <div className="recommend-title">
+                <div className="home-bestseller-recommend">
+                    <div className="home-bestseller-title">
                         <a href="http://www.baidu.com" className="recommend-a">
                             <p>畅销书单</p>
                             <span className="arrow">
@@ -25,8 +26,8 @@ class BestsellerList extends React.Component {
                                         <li key={item.get('bookid')}>
                                             <a href="http://www.baidu.com">
                                                 <img src={list_icon} className="rank-img" alt=""/>
-                                                <span className="book-name">{item.get('bookname')}</span>
-                                                <span className="book-author">{item.get('author')}&nbsp;著</span>
+                                                <span className="bestseller-book-name">{item.get('bookname')}</span>
+                                                <span className="bestseller-book-author">{item.get('author')}&nbsp;著</span>
                                             </a>
                                         </li>
                                     )

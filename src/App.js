@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import './css/main.css';
-import Choice from './components/Choice.js';
+import Choice from './components/choice';
 import Recommend from './components/recommend';
 import BestsellerList from './components/bestseller';
-import NewBook from './components/NewBook.js';
-import ChoiceMore from './components/ChoiceMore.js';
+import NewBook from './components/newbook';
+import ChoiceMore from './components/choicemore';
 import Banner from './components/Banner.js';
 
 import {connect} from 'react-redux';

@@ -1,4 +1,4 @@
-.home-recommend {
+.choice-more-recommend {
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -6,20 +6,30 @@
     margin-top: 10px;
 }
 
-.home-recommend-title {
+.choice-more-title {
     height: 3rem;
     border-top: 1rem solid transparent;
     padding: 0 1rem;
 }
 
-.home-recommend-title p {
+.choice-more-title p {
     font-size: 18px;
     display: inline;
     color: #404047;
     font-weight: 700;
 }
 
-.home-book-title {
+.choice-more-cover {
+    width: 6rem;
+    height: 8rem;
+    overflow: hidden;
+    float: left;
+    margin-right: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(51,55,61,.1);
+    border-radius: 2px;
+}
+
+.choice-more-title-1 {
     font-size: 1.7rem;
     color: #404046;
     font-weight: 600;
@@ -30,51 +40,14 @@
     letter-spacing: 0.5px;
 }
 
-.home-recommend-text {
-    font-size: 18px;
-    display: block;
-    color: #404047;
-    font-weight: 700;
-}
-
-.home-book-cover {
-    width: 6rem;
-    height: 8rem;
-    overflow: hidden;
-    float: left;
-    margin-right: .5rem;
-    box-shadow: 0 4px 8px 0 rgba(51,55,61,.1);
-    border-radius: 2px;
-}
-
-.home-book-content {
-    display: block;
-    overflow: hidden;
-}
-
-.home-book-li {
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid #f0f2f5;
-    display: list-item;
-}
-
-.home-book-li a {
-    width: 100%;
-    height: 100%;
-    padding: 14px 0 14px 0;
-    box-sizing: border-box;
-    display: inline-block;
-}
-
-.home-author {
+.choice-more-author {
     font-size: 13px;
     color: #969ba3;
     display: inline-block;
     margin-top: 3px;
 }
 
-.home-book-rand-a {
+.choice-more-rand-a {
     font-size: 13px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -86,15 +59,13 @@
     margin-top: 8px;
 }
 
-.home-book-rand-content {
+.choice-more-rand-content {
     color: #969ba3;
     display: inline;
     vertical-align: top;
 }
 
-.home-book-ul {
-    width: 100%;
-    height: 100%;
-    padding: 0 12.5px;
-    box-sizing: border-box;
+.choice-more-content {
+    display: block;
+    overflow: hidden;
 }
