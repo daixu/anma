@@ -113,17 +113,17 @@ li a {
     width: 100%;
 }
 
-a {
-    color: #333;
-    text-decoration: none;
-}
-
 .next {
     width: 100%;
     display: inline-block;
     background-repeat: no-repeat;
     background-size: 2.5px 20.5px;
     background-position: 0 3.5px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
 }
 
 ul li img {
@@ -134,14 +134,4 @@ ul li img {
 ul {
     display: inline-block;
     background-color: #fff;
-}
-
-.book-name {
-    line-height: 60px;
-    display: inline-block;
-    font-size: .9325rem;
-    color: #404047;
-    margin-left: 11px;
-    font-weight: 600;
-    vertical-align: top;
 }
