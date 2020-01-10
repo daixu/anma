@@ -7,8 +7,8 @@ class Recommend extends React.Component {
     render() {
         return (
             <div>
-                <div className="home-recommend">
-                    <div className="home-recommend-title">
+                <div className="recommend-header">
+                    <div className="recommend-title">
                         <a href="http://www.baidu.com" className="recommend-a">
                             <p>强力推荐</p>
                             <span className="arrow">
@@ -19,21 +19,21 @@ class Recommend extends React.Component {
                 </div>
                 <div className="recommend-list">
                     <div className="recommend-list-content">
-                        <ul className="home-book-ul">
+                        <ul className="recommend-book-ul">
                             {
                                 this.props.data.map(function (item) {
                                     return (
-                                        <li key={item.get('bookid')} className="home-book-li">
+                                        <li key={item.get('bookid')} className="recommend-book-li">
                                             <a href="https://www.baidu.com">
                                                 <div className="recommend-book-info">
-                                                    <img src={item.get('bookcover')} className="home-book-cover" alt=""/>
+                                                    <img src={item.get('bookcover')} className="recommend-book-cover" alt=""/>
 
-                                                    <div className="home-book-content">
-                                                        <p className="home-book-title">{item.get('bookname')}</p>
-                                                        <span className="home-author">{item.get('author')}&nbsp;著</span>
+                                                    <div className="recommend-book-content">
+                                                        <p className="recommend-book-title">{item.get('bookname')}</p>
+                                                        <span className="recommend-author">{item.get('author')}&nbsp;著</span>
 
-                                                        <div className="home-book-rand-a">
-                                                            <div className="home-book-rand-content">{item.get('synopsis')}</div>
+                                                        <div className="recommend-book-rand-a">
+                                                            <div className="recommend-book-rand-content">{item.get('synopsis')}</div>
                                                         </div>
                                                     </div>
                                                 </div>
