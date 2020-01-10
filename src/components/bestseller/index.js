@@ -1,6 +1,6 @@
 import React from 'react'
-import arrow from "../static/arrow.png";
-import list_icon from "../static/list-icon0.png";
+import arrow from "../../static/arrow.png";
+import list_icon from "../../static/list-icon0.png";
 
 class BestsellerList extends React.Component {
     render() {

@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import './css/main.css';
 import Choice from './components/Choice.js';
-import Recommend from './components/Recommend.js';
-import BestsellerList from './components/BestsellerList.js';
+import Recommend from './components/recommend';
+import BestsellerList from './components/bestseller';
 import NewBook from './components/NewBook.js';
 import ChoiceMore from './components/ChoiceMore.js';
 import Banner from './components/Banner.js';
@@ -23,7 +23,6 @@ class App extends React.Component {
             </div>
           </div>
 
-          {console.log('hhh222',this.props.dataBanner.picdata)}
           <Banner data={this.props.dataBanner.picdata || []}/>
 
           <Choice/>
