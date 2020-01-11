@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.3.1",
     "axios": "^0.19.0",
+    "customize-cra": "^0.9.1",
     "immutable": "latest",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "react": "^16.12.0",
+    "react-app-rewired": "^2.1.5",
     "react-dom": "^16.12.0",
     "react-id-swiper": "^2.4.0",
     "react-redux": "^6.0.0",
@@ -15,9 +20,9 @@
     "swiper": "^5.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.13.0",
     "redux-devtools-extension": "^2.13.7"
   }
 }

@@ -11,6 +11,8 @@ import Banner from './components/banner';
 import {connect} from 'react-redux';
 import {getChoiceList, loadMoreList, loadBanner} from './store/actionCreators.js';
 
+import {Button} from "antd-mobile";
+
 class App extends React.Component {
 
   render() {
@@ -32,6 +34,8 @@ class App extends React.Component {
             <NewBook data={this.props.dataObj.get('completedata')}/>
             <ChoiceMore data={this.props.dataMore.get('pagedata')}/>
           </div>
+
+          <Button>default</Button>
         </div>
     )
   }
