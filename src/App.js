@@ -6,7 +6,7 @@ import Recommend from './components/recommend';
 import BestsellerList from './components/bestseller';
 import NewBook from './components/newbook';
 import ChoiceMore from './components/choicemore';
-import Banner from './components/Banner.js';
+import Banner from './components/banner';
 
 import {connect} from 'react-redux';
 import {getChoiceList, loadMoreList, loadBanner} from './store/actionCreators.js';
