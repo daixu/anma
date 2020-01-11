@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../App.css';
+
 import './../../css/main.css';
 import Choice from './../choice';
 import Recommend from './../recommend';
@@ -26,7 +26,7 @@ class Home extends React.Component {
                 <Banner data={this.props.dataBanner.picdata || []}/>
 
                 <Choice/>
-                <div className="content">
+                <div className="main-content">
                   <Recommend data={this.props.dataObj.get('heavydata')}/>
                   <BestsellerList data={this.props.dataObj.get('searchdata')}/>
                   <NewBook data={this.props.dataObj.get('completedata')}/>

@@ -115,3 +115,7 @@ ul {
     display: inline-block;
     background-color: #fff;
 }
+
+.main-content {
+    background-color: #f5f5f5;
+}
