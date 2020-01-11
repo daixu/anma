@@ -4,10 +4,12 @@ import './index.css';
 import default_book_cover from './../../static/default_bookcover.jpg'
 import {connect} from 'react-redux';
 import {loadDetail} from './../../store/actionCreators.js';
+import { Button } from "antd-mobile";
 
 class Detail extends React.Component {
 
     render() {
+        const detailsData = this.props.dataDetail.get('detailsdata');
         console.log(this.props.dataDetail.get('detailsdata').get('bookid'));
         return (
             <div>
@@ -17,7 +19,21 @@ class Detail extends React.Component {
                     </div>
 
                     <div className="book-detail-content">
-                        <img src={default_book_cover} alt="" className="book-cover"/>
+                        <div className="book-img">
+                            <img src={detailsData.get('bookcover') || default_book_cover} alt="" className="book-cover"/>
+                            <div className="book-info">
+                                <p className="book-title">{detailsData.get('bookname')}</p>
+                                <p className="book-author">作者: {detailsData.get('author')}</p>
+                                <p className="book-author">类别: {detailsData.get('classname')}</p>
+                                <p className="book-author">字数: {detailsData.get('wordnumbers')} | {detailsData.get('serstatus')}</p>
+                                <p className="book-author">点击: {detailsData.get('clicknumber')}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="detail-button">
+                        <Button type="warning" inline style={{ width: '48%' }}>开始阅读</Button>
+                        <Button type="primary" inline style={{ width: '48%', float: 'right', background: '#f5f5f5', color: '#2d2d2d' }}>加入书架</Button>
                     </div>
                 </div>
             </div>

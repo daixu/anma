@@ -8,3 +8,36 @@
     width: 90px;
     height: 121px;
 }
+
+.book-img {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 14.5px 12.5px 0 12.5px;
+}
+
+.book-info {
+    width: 67%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.book-title {
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.book-author {
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+.detail-button {
+    width: 100%;
+    padding: 14px 12.5px 0 12.5px;
+    box-sizing: border-box;
+}
