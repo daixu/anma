@@ -17,6 +17,11 @@ export const getMoreList = (data) => ({
     data: fromJS(data)
 });
 
+export const initDetail = (data) => ({
+    type: constants.GET_DETAIL,
+    data: fromJS(data)
+});
+
 export const getChoiceList = (userId, pageIndex) => {
     return (dispatch) => {
         axios.get('/api/newbookinfo/get-selectmodule', {
@@ -41,7 +46,7 @@ export const getChoiceList = (userId, pageIndex) => {
 
 export const loadMoreList = (userId, pageIndex, maleChannel) => {
     return (dispatch) => {
-        axios.get('api/newbookinfo/get-bookdatapage', {
+        axios.get('/api/newbookinfo/get-bookdatapage', {
             headers: {
                 'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
             },
@@ -65,7 +70,7 @@ export const loadMoreList = (userId, pageIndex, maleChannel) => {
 
 export const loadBanner = (userId, maleChannel, type) => {
     return (dispatch) => {
-        axios.get('api/configure/get-picconfig', {
+        axios.get('/api/configure/get-picconfig', {
             headers: {
                 'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
             },
@@ -81,6 +86,29 @@ export const loadBanner = (userId, maleChannel, type) => {
             console.log("data", data);
             const action = getBanner(data.data);
             dispatch(action);
+        })
+    }
+};
+
+export const loadDetail = (userId, bookId) => {
+    return (dispatch) => {
+        axios.get('/api/bookinfo/get-bookdetails', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                channel: 1001,
+                platform: 2,
+                bookid: bookId,
+                clicktype: 101
+            },
+        }).then((response) => {
+            const data = response.data;
+            const action = initDetail(data.data);
+            dispatch(action);
+        }).catch(() => {
+            console.log("error")
         })
     }
 };

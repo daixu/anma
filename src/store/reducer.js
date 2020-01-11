@@ -23,6 +23,9 @@ const defaultState = fromJS({
     dataBanner: {
         picdata:[]
     },
+    dataDetail: {
+        detailsdata:{}
+    },
     index: 0,
 });
 
@@ -37,6 +40,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_MORE_LIST) {
         return state.set('dataMore', action.data);
+    }
+
+    if (action.type === constants.GET_DETAIL) {
+        return state.set('dataDetail', action.data);
     }
     return state;
 }

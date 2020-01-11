@@ -1,6 +1,7 @@
 import React from 'react';
 import arrow from "../../static/arrow.png";
 import './index.css';
+import { Link } from "react-router-dom";
 
 class Recommend extends React.Component {
 
@@ -24,7 +25,7 @@ class Recommend extends React.Component {
                                 this.props.data.map(function (item) {
                                     return (
                                         <li key={item.get('bookid')} className="recommend-book-li">
-                                            <a href="https://www.baidu.com">
+                                            <Link to={'/detail/' + item.get('bookid')}>
                                                 <div className="recommend-book-info">
                                                     <img src={item.get('bookcover')} className="recommend-book-cover" alt=""/>
 
@@ -37,7 +38,7 @@ class Recommend extends React.Component {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </li>
                                     )
                                 })
