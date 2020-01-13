@@ -2,6 +2,8 @@ import React from 'react';
 import { TabBar } from 'antd-mobile';
 import './index.css';
 import Home from './../home/home'
+import tab_bookstore from './../../static/tab_bookstore.png'
+import tab_bookstore2 from './../../static/tab_bookstore2.png'
 
 class Main extends React.Component {
     constructor(props) {
@@ -46,27 +48,16 @@ class Main extends React.Component {
             <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
                 <TabBar
                     unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
+                    tintColor="#f46464"
                     barTintColor="white"
                     hidden={this.state.hidden}
                 >
                     <TabBar.Item
-                        title="Life"
-                        key="Life"
-                        icon={<div style={{
-                            width: '22px',
-                            height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-                        />
-                        }
-                        selectedIcon={<div style={{
-                            width: '22px',
-                            height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-                        />
-                        }
+                        title="书架"
+                        key="书架"
+                        icon={<div className="main-booklist2" />}
+                        selectedIcon={<div className="main-booklist" />}
                         selected={this.state.selectedTab === 'blueTab'}
-                        badge={1}
                         onPress={() => {
                             this.setState({
                                 selectedTab: 'blueTab',
@@ -78,18 +69,10 @@ class Main extends React.Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-                            />
+                            <div className="main-bookstore2" />
                         }
                         selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-                            />
+                            <div className="main-bookstore" />
                         }
                         title="首页"
                         key="首页"
@@ -104,10 +87,10 @@ class Main extends React.Component {
                         <Home />
                     </TabBar.Item>
                     <TabBar.Item
-                        icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-                        selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-                        title="My"
-                        key="my"
+                        icon={<div className="main-my2" />}
+                        selectedIcon={<div className="main-my" />}
+                        title="我的"
+                        key="我的"
                         selected={this.state.selectedTab === 'yellowTab'}
                         onPress={() => {
                             this.setState({
