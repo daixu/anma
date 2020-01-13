@@ -1,6 +1,7 @@
 import React from 'react';
 import arrow from "../../static/arrow.png";
 import './index.css';
+import {Link} from "react-router-dom";
 
 class ChoiceMore extends React.Component {
 
@@ -25,7 +26,7 @@ class ChoiceMore extends React.Component {
                                 this.props.data.map(function (item) {
                                     return (
                                         <li key={item.get('bookid')} className="choice-more-li">
-                                            <a href="https://www.baidu.com">
+                                            <Link to={'/detail/' + item.get('bookid')}>
                                                 <div className="choice-more-book-info">
                                                     <img src={item.get('bookcover')} className="choice-more-cover" alt=""/>
 
@@ -37,7 +38,7 @@ class ChoiceMore extends React.Component {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </li>
                                     )
                                 })

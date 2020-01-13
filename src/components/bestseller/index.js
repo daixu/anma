@@ -2,6 +2,7 @@ import React from 'react';
 import arrow from "../../static/arrow.png";
 import list_icon from "../../static/list-icon0.png";
 import './index.css';
+import {Link} from "react-router-dom";
 
 class BestsellerList extends React.Component {
     render() {
@@ -24,11 +25,11 @@ class BestsellerList extends React.Component {
                                 this.props.data.map(function (item) {
                                     return (
                                         <li key={item.get('bookid')}>
-                                            <a href="http://www.baidu.com">
+                                            <Link to={'/detail/' + item.get('bookid')}>
                                                 <img src={list_icon} className="rank-img" alt=""/>
                                                 <span className="bestseller-book-name">{item.get('bookname')}</span>
                                                 <span className="bestseller-book-author">{item.get('author')}&nbsp;著</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     )
                                 })
