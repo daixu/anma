@@ -1,4 +1,4 @@
-.book-detail-content {
+.book-detail-info {
     width: 100%;
     height: 148.5px;
     background-color: #f3f3f3;
@@ -40,4 +40,77 @@
     width: 100%;
     padding: 14px 12.5px 0 12.5px;
     box-sizing: border-box;
+}
+
+.nav-back {
+    display: inline-block;
+    width: 9px;
+    height: 15px;
+    margin-left: 12.5px;
+    margin-top: 14.5px;
+    position: absolute;
+    left: 0;
+}
+
+.nav-back img {
+    width: 100%;
+}
+
+.detail-book-synopsis {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 1.5rem;
+    height: 6rem;
+    letter-spacing: 0.5px;
+    color: #33373d;
+    margin-top: 8px;
+    padding: 0 12.5px;
+}
+
+.detail-book-synopsis-content {
+    color: #33373d;
+    display: inline;
+    vertical-align: top;
+}
+
+.book-detail-content {
+    display: block;
+    overflow: hidden;
+}
+
+.book-detail-catalog {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #f0f2f5;
+    border-bottom: 1px solid #f0f2f5;
+    margin-top: 18px;
+}
+
+.book-detail-catalog span {
+    margin-left: 24.5px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.book-detail-catalog-a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.book-detail-arrow {
+    width: 6.5px;
+    height: 12.5px;
+    float: right;
+    margin-right: 12.5px;
+}
+
+.book-detail-arrow img {
+    width: 100%;
 }
