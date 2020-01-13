@@ -1,9 +1,7 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
 import './index.css';
-import Home from './../home/home'
-import tab_bookstore from './../../static/tab_bookstore.png'
-import tab_bookstore2 from './../../static/tab_bookstore2.png'
+import Home from './../home/home';
 
 class Main extends React.Component {
     constructor(props) {
