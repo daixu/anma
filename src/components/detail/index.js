@@ -10,10 +10,21 @@ import {Link} from "react-router-dom";
 import arrow from "../../static/arrow.png";
 
 class Detail extends React.Component {
+    login() {
+        this.props.history.push("/login");
+    }
+
+    startReading() {
+        const userId = localStorage.getItem('userId');
+        if (userId === null || userId === '0') {
+            this.login();
+        } else {
+            console.log('开始阅读');
+        }
+    }
 
     render() {
         const detailsData = this.props.dataDetail.get('detailsdata');
-        console.log(this.props.dataDetail.get('detailsdata').get('bookid'));
         return (
             <div>
                 <div className="nav-cont">
@@ -41,13 +52,13 @@ class Detail extends React.Component {
 
                 <div className="book-detail-content">
                     <div className="detail-button">
-                        <Button type="warning" inline style={{width: '48%'}}>开始阅读</Button>
+                        <Button type="warning" inline style={{width: '48%'}} onClick={this.startReading.bind(this)}>开始阅读</Button>
                         <Button type="primary" inline style={{
                             width: '48%',
                             float: 'right',
                             background: '#f5f5f5',
                             color: '#2d2d2d'
-                        }}>加入书架</Button>
+                        }} onClick={() => this.login()}>加入书架</Button>
                     </div>
 
                     <div className="detail-book-synopsis">

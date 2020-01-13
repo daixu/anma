@@ -15,17 +15,25 @@ class Directory extends React.Component {
         return (
             <div>
                 <div className="nav-cont">
-                        <span className="nav-back">
-                            <Link to={'/detail/' + bookId}>
-                                <img src={img_back} alt="back"/>
-                            </Link>
-                        </span>
-                    <span className="nav-title">{this.props.dataDirectory.get('bookname')}</span>
+                    <span className="nav-back">
+                        <Link to={'/detail/' + bookId}>
+                            <img src={img_back} alt="back"/>
+                        </Link>
+                    </span>
+                    <span className="nav-title">
+                        {this.props.dataDirectory.get('bookname')}
+                    </span>
                 </div>
 
                 <div className="directory-list">
                     <div className="directory-list-content">
                         <ul className="directory-ul">
+                            <li className="directory-li">
+                                {this.props.dataDirectory.get('serstatus')} 共 {this.props.dataDirectory.get('chapternumber')} 章
+                            </li>
+                            <li className="directory-li">
+                                正文卷
+                            </li>
                             {
                                 pageData.map(function (item) {
                                     return (
