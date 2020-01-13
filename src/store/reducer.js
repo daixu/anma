@@ -26,6 +26,9 @@ const defaultState = fromJS({
     dataDetail: {
         detailsdata:{}
     },
+    dataDirectory: {
+        pagedata:[]
+    },
     index: 0,
 });
 
@@ -44,6 +47,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_DETAIL) {
         return state.set('dataDetail', action.data);
+    }
+
+    if (action.type === constants.GET_DIRECTORY) {
+        return state.set('dataDirectory', action.data);
     }
     return state;
 }

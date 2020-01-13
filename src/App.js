@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import Main from './components/main';
 import Detail from './components/detail';
+import Directory from './components/directory';
 import store from './store';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
                     <div>
                         <Route path='/index' exact component={Main} />
                         <Route path='/detail/:id' exact component={Detail}/>
+                        <Route path='/directory/:id' exact component={Directory}/>
                         <Redirect path="/" to={{pathname: '/index'}} />
                     </div>
                 </BrowserRouter>
