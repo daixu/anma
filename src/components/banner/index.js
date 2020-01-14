@@ -1,19 +1,23 @@
 import React from 'react';
-import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './index.css';
 
 class Banner extends React.Component {
 
     render() {
-        const params = {
-            shouldSwiperU: true,
-            rebuildOnUpdate: true,
+        const settings = {
+            // dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
         };
 
         return (
             <div>
-                <Swiper params={params}>
+                <Slider {...settings}>
                     {
                         this.props.data.map((item) => {
                             return (
@@ -23,7 +27,7 @@ class Banner extends React.Component {
                             )
                         })
                     }
-                </Swiper>
+                </Slider>
             </div>
         )
     }
