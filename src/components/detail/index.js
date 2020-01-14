@@ -3,11 +3,12 @@ import React from 'react';
 import './index.css';
 import default_book_cover from './../../static/default_bookcover.jpg';
 import {connect} from 'react-redux';
-import {loadDetail} from './../../store/actionCreators.js';
+import {loadDetail, loadComment} from './../../store/actionCreators.js';
 import {Button} from "antd-mobile";
 import img_back from './../../static/img_back.png';
 import {Link} from "react-router-dom";
 import arrow from "../../static/arrow.png";
+import Comment from './../comment';
 
 class Detail extends React.Component {
     login() {
@@ -69,10 +70,20 @@ class Detail extends React.Component {
                         <Link to={'/directory/' + detailsData.get('bookid')} className="book-detail-catalog-a">
                             <span>目录</span>
                             <span className="book-detail-arrow">
-                                    <img src={arrow} alt="next"/>
-                                </span>
+                                <img src={arrow} alt="next"/>
+                            </span>
                         </Link>
                     </div>
+
+                    <Link className="book-detail-comment" to={'/index'}>
+                        <span className="book-detail-comment-header">书评区</span>
+                        <span className="book-detail-comment-number">{this.props.dataComment.get('sumreplycount')}人评论</span>
+                        <span className="book-detail-arrow">
+                            <img src={arrow} alt="next"/>
+                        </span>
+                    </Link>
+
+                    <Comment data={this.props.dataComment.get('comdata')}/>
                 </div>
             </div>
         )
@@ -81,12 +92,14 @@ class Detail extends React.Component {
     componentDidMount() {
         const bookId = this.props.match.params.id;
         this.props.initDetail(bookId);
+        this.props.initComment(bookId);
     }
 }
 
 const mapStateToProps = (state) => {
     return {
         dataDetail: state.get('dataDetail'),
+        dataComment: state.get('dataComment')
     }
 };
 
@@ -94,6 +107,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         initDetail(bookId) {
             const action = loadDetail(28519, bookId);
+            dispatch(action);
+        },
+
+        initComment(bookId) {
+            const action = loadComment(28519, bookId);
             dispatch(action);
         }
     }

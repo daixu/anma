@@ -22,6 +22,11 @@ export const initDetail = (data) => ({
     data: fromJS(data)
 });
 
+export const initComment = (data) => ({
+    type: constants.GET_COMMENT,
+    data: fromJS(data)
+});
+
 export const initDirectory = (data) => ({
     type: constants.GET_DIRECTORY,
     data: fromJS(data)
@@ -111,6 +116,26 @@ export const loadDetail = (userId, bookId) => {
         }).then((response) => {
             const data = response.data;
             const action = initDetail(data.data);
+            dispatch(action);
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+};
+
+export const loadComment = (userId, bookId) => {
+    return (dispatch) => {
+        axios.get('/api/comment/get-comdata', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                bookid: bookId
+            },
+        }).then((response) => {
+            const data = response.data;
+            const action = initComment(data.data);
             dispatch(action);
         }).catch(() => {
             console.log("error")

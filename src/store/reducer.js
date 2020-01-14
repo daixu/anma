@@ -29,6 +29,10 @@ const defaultState = fromJS({
     dataDirectory: {
         pagedata:[]
     },
+    dataComment: {
+        sumreplycount: 0,
+        comdata:[]
+    },
     index: 0,
 });
 
@@ -47,6 +51,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_DETAIL) {
         return state.set('dataDetail', action.data);
+    }
+
+    if (action.type === constants.GET_COMMENT) {
+        return state.set('dataComment', action.data);
     }
 
     if (action.type === constants.GET_DIRECTORY) {

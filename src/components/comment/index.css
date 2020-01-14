@@ -1,0 +1,48 @@
+.book-comment-ul {
+    width: 100%;
+}
+
+.book-comment-li {
+    width: 100%;
+    border-bottom: 1px solid #f0f2f5;
+    padding: 12.5px 12.5px 12.5px 12.5px;
+    box-sizing: border-box;
+}
+
+.book-comment-info {
+}
+
+.book-comment-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+}
+
+.book-comment-detail {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    width: 85%;
+}
+
+.book-comment-title {
+    font-size: 1.3rem;
+    color: #949494;
+}
+
+.book-comment-content {
+    font-size: 1.4rem;
+    color: #333333;
+    margin-top: 5px;
+}
+
+.book-other-info {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.book-comment-time {
+    float: left;
+    font-size: 13px;
+    color: #666;
+}

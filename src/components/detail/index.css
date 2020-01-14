@@ -89,7 +89,7 @@
 }
 
 .book-detail-catalog span {
-    margin-left: 24.5px;
+    margin-left: 12.5px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
@@ -113,4 +113,29 @@
 
 .book-detail-arrow img {
     width: 100%;
+}
+
+.book-detail-comment {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    line-height: 45px;
+    padding-left: 12.5px;
+    box-sizing: border-box;
+    display: block;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.book-detail-comment-header {
+    line-height: 44px;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.book-detail-comment-number {
+    font-size: 13px;
+    color: #f05656;
+    margin-left: 13.5px;
 }
