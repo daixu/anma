@@ -93,7 +93,6 @@ export const loadBanner = (userId, maleChannel, type) => {
             },
         }).then((response) => {
             const data = response.data;
-            console.log("data", data);
             const action = getBanner(data.data);
             dispatch(action);
         })
