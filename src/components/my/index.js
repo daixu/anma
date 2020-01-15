@@ -16,7 +16,6 @@ import {Link} from "react-router-dom";
 class My extends React.Component {
 
     render() {
-
         return (
             <div>
                 <div>
@@ -28,8 +27,7 @@ class My extends React.Component {
                         <img className="my-user-avatar" src={default_avatar} alt="user-avatar"/>
                         <div className="my-user-info">
                             <p className="my-username">{this.props.dataUserInfo.get('nickname') || '点击登录'}</p>
-                            {console.log('readTime=', this.props.dataUserInfo.get('readTime'))}
-                            <p className="my-use-time">{this.props.dataUserInfo.get('readTime') || '您还没有登录哦'}</p>
+                            <p className="my-use-time">{this.props.dataUserInfo.get('readTime') === undefined ? '您还没有登录哦' : '今日已读' + this.props.dataUserInfo.get('readTime') + '分钟'}</p>
                         </div>
                         <span className="my-arrow">
                             <img src={arrow} alt="next"/>
