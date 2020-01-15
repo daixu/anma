@@ -9,6 +9,7 @@ import img_back from './../../static/img_back.png';
 import {Link} from "react-router-dom";
 import arrow from "../../static/arrow.png";
 import Comment from './../comment';
+import Like from "../like";
 
 class Detail extends React.Component {
     login() {
@@ -75,15 +76,26 @@ class Detail extends React.Component {
                         </Link>
                     </div>
 
-                    <Link className="book-detail-comment" to={'/index'}>
-                        <span className="book-detail-comment-header">书评区</span>
-                        <span className="book-detail-comment-number">{this.props.dataComment.get('sumreplycount')}人评论</span>
-                        <span className="book-detail-arrow">
-                            <img src={arrow} alt="next"/>
-                        </span>
-                    </Link>
+                    <div className="book-detail-middle">
+                        <Link className="book-detail-comment" to={'/index'}>
+                            <span className="book-detail-comment-header">书评区</span>
+                            <span className="book-detail-comment-number">{this.props.dataComment.get('sumreplycount')}人评论</span>
+                            <span className="book-detail-arrow">
+                                <img src={arrow} alt="next"/>
+                            </span>
+                        </Link>
 
-                    <Comment data={this.props.dataComment.get('comdata')}/>
+                        <Comment data={this.props.dataComment.get('comdata')}/>
+
+                        <Link className="book-detail-comment" to={'/index'}>
+                            <span className="book-detail-comment-header">猜你喜欢</span>
+                            <span className="book-detail-arrow">
+                                <img src={arrow} alt="next"/>
+                            </span>
+                        </Link>
+
+                        <Like data={this.props.dataDetail.get('likedata')}/>
+                    </div>
                 </div>
             </div>
         )

@@ -24,7 +24,8 @@ const defaultState = fromJS({
         picdata:[]
     },
     dataDetail: {
-        detailsdata:{}
+        detailsdata:{},
+        likedata: []
     },
     dataDirectory: {
         pagedata:[]
