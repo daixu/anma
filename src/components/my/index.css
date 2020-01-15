@@ -3,6 +3,7 @@
     margin: 12.5px 12.5px 0 12.5px;
     height: 60px;
 }
+
 .my-user-avatar {
     width: 60px;
     height: 60px;
@@ -41,4 +42,78 @@
 
 .my-user-money {
     margin: 10px 12.5px 0 12.5px;
+    height: 40px;
+}
+
+.my-user-ss-money {
+    font-size: 17px;
+    color: #3f3f3f;
+    line-height: 40px;
+}
+
+.my-user-money-number {
+    font-size: 17px;
+    color: #f46464;
+    line-height: 40px;
+}
+
+.my-user-btn {
+    float: right;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.my-user-account-btn {
+    width: 60px;
+    height: 28px;
+    border: 1px solid #f46464;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px rgba(51, 55, 61, .1);
+    background: #ffffff;
+    color: #f46464;
+}
+
+.my-user-recharge-btn {
+    width: 60px;
+    height: 28px;
+    margin-left: 10px;
+    border: 1px solid #f46464;
+    box-shadow: 10px 10px 5px rgba(51, 55, 61, .1);
+    border-radius: 20px;
+    background: #f46464;
+    color: #ffffff;
+}
+
+.my-option-img-a {
+    width: 25px;
+    height: 25px;
+}
+
+.my-option-img-b {
+    width: 27px;
+    height: 25px;
+}
+
+.my-option-content {
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: #f46464;
+    margin: 10px;
+}
+
+.my-option-list.page {
+    display: block;
+    padding: 10px 0 10px 0;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.my-option-list .option-content {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    text-align: center;
 }
