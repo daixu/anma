@@ -34,6 +34,9 @@ const defaultState = fromJS({
         sumreplycount: 0,
         comdata:[]
     },
+    dataUserInfo: {
+
+    },
     index: 0,
 });
 
@@ -60,6 +63,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_DIRECTORY) {
         return state.set('dataDirectory', action.data);
+    }
+
+    if (action.type === constants.GET_USER_INFO) {
+        return state.set('dataUserInfo', action.data);
     }
     return state;
 }

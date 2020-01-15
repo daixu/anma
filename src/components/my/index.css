@@ -1,0 +1,44 @@
+.my-user-top {
+    box-sizing: border-box;
+    margin: 12.5px 12.5px 0 12.5px;
+    height: 60px;
+}
+.my-user-avatar {
+    width: 60px;
+    height: 60px;
+    border-style: none;
+}
+
+.my-user-info {
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.my-username {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.my-use-time {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 6px;
+}
+
+.my-arrow {
+    width: 6.5px;
+    height: 12.5px;
+    float: right;
+    line-height: 60px;
+}
+
+.my-arrow img {
+    width: 100%;
+}
+
+.my-user-money {
+    margin: 10px 12.5px 0 12.5px;
+}

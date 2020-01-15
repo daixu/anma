@@ -4,3 +4,4 @@ export const GET_BANNER = 'GET_BANNER';
 export const GET_DETAIL = 'GET_DETAIL';
 export const GET_COMMENT = 'GET_COMMENT';
 export const GET_DIRECTORY = 'GET_DIRECTORY';
+export const GET_USER_INFO = 'GET_USER_INFO';

@@ -32,6 +32,11 @@ export const initDirectory = (data) => ({
     data: fromJS(data)
 });
 
+export const initUserInfo = (data) => ({
+    type: constants.GET_USER_INFO,
+    data: fromJS(data)
+});
+
 export const getChoiceList = (userId, pageIndex) => {
     return (dispatch) => {
         axios.get('/api/newbookinfo/get-selectmodule', {
@@ -158,6 +163,25 @@ export const loadDirectory = (userId, bookId) => {
         }).then((response) => {
             const data = response.data;
             const action = initDirectory(data.data);
+            dispatch(action);
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+};
+
+export const loadUserInfo = (userId) => {
+    return (dispatch) => {
+        axios.get('/api/userinfo/get-userinfo', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId
+            },
+        }).then((response) => {
+            const data = response.data;
+            const action = initUserInfo(data.data);
             dispatch(action);
         }).catch(() => {
             console.log("error")
