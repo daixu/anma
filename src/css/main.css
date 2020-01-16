@@ -132,3 +132,8 @@ ul {
 .main-content {
     background-color: #f5f5f5;
 }
+
+.am-tabs-horizontal .am-tabs-pane-wrap-active {
+    height: auto;
+    overflow-x: hidden;
+}
