@@ -2,18 +2,19 @@ import React from 'react';
 
 import './index.css';
 import img_back from './../../static/img_back.png';
-import {Link} from "react-router-dom";
 
 class BookStack extends React.Component {
+
+    goBack() {
+        this.props.history.go(-1)
+    }
 
     render() {
         return (
             <div>
                 <div className="nav-cont">
-                    <span className="nav-back">
-                        <Link to={'/index'}>
-                            <img src={img_back} alt="back"/>
-                        </Link>
+                    <span className="nav-back" onClick={() => this.goBack()}>
+                        <img src={img_back} alt="back"/>
                     </span>
                     <span className="nav-title">
                         书库
