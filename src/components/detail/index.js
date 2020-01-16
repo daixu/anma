@@ -31,6 +31,7 @@ class Detail extends React.Component {
 
     render() {
         const detailsData = this.props.dataDetail.get('detailsdata');
+        console.log('detailsData= ', detailsData);
         return (
             <div>
                 <div className="nav-cont">
@@ -107,6 +108,9 @@ class Detail extends React.Component {
         const bookId = this.props.match.params.id;
         this.props.initDetail(bookId);
         this.props.initComment(bookId);
+    }
+
+    componentWillUnmount() {
     }
 }
 
