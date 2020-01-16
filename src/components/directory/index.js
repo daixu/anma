@@ -13,7 +13,6 @@ class Directory extends React.Component {
 
     render() {
         const pageData = this.props.dataDirectory.get('pagedata');
-        const bookId = this.props.match.params.id;
         console.log('pageData= ', pageData);
         return (
             <div>
