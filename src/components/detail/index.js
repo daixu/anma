@@ -16,6 +16,10 @@ class Detail extends React.Component {
         this.props.history.push("/login");
     }
 
+    goBack() {
+        this.props.history.go(-1)
+    }
+
     startReading() {
         const userId = localStorage.getItem('userId');
         if (userId === null || userId === '0') {
@@ -30,10 +34,8 @@ class Detail extends React.Component {
         return (
             <div>
                 <div className="nav-cont">
-                        <span className="nav-back">
-                            <Link to={'/index'}>
-                                <img src={img_back} alt="back"/>
-                            </Link>
+                        <span className="nav-back" onClick={() => this.goBack()}>
+                            <img src={img_back} alt="back"/>
                         </span>
                     <span className="nav-text">书籍详情</span>
                 </div>
