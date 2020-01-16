@@ -53,25 +53,25 @@ class My extends React.Component {
                             <li className="option-content">
                                 <Link to={'/detail/'} className="strong-list-a">
                                     <img src={icon_sign} className="my-option-img-a" alt=""/>
-                                    <p className="story-name">签到</p>
+                                    <p className="my-story-name">签到</p>
                                 </Link>
                             </li>
                             <li className="option-content">
                                 <Link to={'/detail/'} className="strong-list-a">
                                     <img src={icon_welfare} className="my-option-img-a" alt=""/>
-                                    <p className="story-name">福利</p>
+                                    <p className="my-story-name">福利</p>
                                 </Link>
                             </li>
                             <li className="option-content">
                                 <Link to={'/detail/'} className="strong-list-a">
                                     <img src={icon_message} className="my-option-img-a" alt=""/>
-                                    <p className="story-name">消息</p>
+                                    <p className="my-story-name">消息</p>
                                 </Link>
                             </li>
                             <li className="option-content">
                                 <Link to={'/detail/'} className="strong-list-a">
                                     <img src={icon_service} className="my-option-img-b" alt=""/>
-                                    <p className="story-name">客服</p>
+                                    <p className="my-story-name">客服</p>
                                 </Link>
                             </li>
                         </ul>

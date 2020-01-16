@@ -176,3 +176,13 @@
     height: 23.5px;
     vertical-align:middle;
 }
+
+.my-story-name {
+    font-size: 13px;
+    color: #a0a0a0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 4.25rem;
+    margin: 3px auto 0 auto;
+}
