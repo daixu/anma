@@ -1,6 +1,15 @@
+.my-content-div {
+    height: 100%;
+    background: #f4f4f4;
+}
+
 .my-user-top {
+    background: #ffffff;
+    padding: 12.5px;
+}
+
+.my-user-info-top {
     box-sizing: border-box;
-    margin: 12.5px 12.5px 0 12.5px;
     height: 60px;
 }
 
@@ -34,10 +43,12 @@
     height: 12.5px;
     float: right;
     line-height: 60px;
+    vertical-align: middle;
 }
 
 .my-arrow img {
     width: 100%;
+    vertical-align: middle;
 }
 
 .my-user-money {
@@ -84,6 +95,12 @@
     color: #ffffff;
 }
 
+.my-option {
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: #f4f4f4;
+}
+
 .my-option-img-a {
     width: 25px;
     height: 25px;
@@ -98,15 +115,20 @@
     height: 100%;
     box-sizing: border-box;
     border-radius: 20px;
-    background: #f46464;
-    margin: 10px;
+    margin: 15px 10px 10px 10px;
     box-shadow: 10px 10px 5px rgba(51, 55, 61, .1);
 }
 
 .my-option-list.page {
     display: block;
     padding: 10px 0 10px 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.my-option-list.page1 {
+    display: block;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
@@ -117,4 +139,41 @@
     padding: 0;
     width: 25%;
     text-align: center;
+}
+
+.option-content-ver {
+    height:60px;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0 10px;
+}
+
+.option-content-ver-bottom {
+    height: 60px;
+    padding: 0 10px;
+}
+
+.option-content-title {
+    height:100%;
+    vertical-align:middle;
+    line-height:60px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.my-option-img-c {
+    width: 25.5px;
+    height: 20.5px;
+    vertical-align:middle;
+}
+
+.my-option-img-d {
+    width: 21px;
+    height: 21.5px;
+    vertical-align:middle;
+}
+
+.my-option-img-e {
+    width: 23.5px;
+    height: 23.5px;
+    vertical-align:middle;
 }

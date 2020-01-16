@@ -33,6 +33,7 @@ div .nav-cont {
     height: 44px;
     border-bottom: 1px solid #e7e7e7;
     text-align: center;
+    background: #ffffff;
 }
 
 div .nav-cont .nav-text {
