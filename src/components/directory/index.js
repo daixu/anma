@@ -4,9 +4,12 @@ import './index.css';
 import {connect} from 'react-redux';
 import {loadDirectory} from './../../store/actionCreators.js';
 import img_back from './../../static/img_back.png';
-import {Link} from "react-router-dom";
 
 class Directory extends React.Component {
+
+    goBack() {
+        this.props.history.go(-1)
+    }
 
     render() {
         const pageData = this.props.dataDirectory.get('pagedata');
@@ -15,10 +18,8 @@ class Directory extends React.Component {
         return (
             <div>
                 <div className="nav-cont">
-                    <span className="nav-back">
-                        <Link to={'/detail/' + bookId}>
-                            <img src={img_back} alt="back"/>
-                        </Link>
+                    <span className="nav-back" onClick={() => this.goBack()}>
+                        <img src={img_back} alt="back"/>
                     </span>
                     <span className="nav-title">
                         {this.props.dataDirectory.get('bookname')}

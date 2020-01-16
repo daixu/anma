@@ -6,6 +6,7 @@ import Directory from './components/directory';
 import Login from './components/login';
 import Register from './components/register/index';
 import RegisterNext from './components/register/registerNext';
+import BookStack from './components/bookstack';
 import store from './store';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ class App extends React.Component {
                 <BrowserRouter>
                     <div>
                         <Route path='/index' exact component={Main} />
+                        <Route path='/bookStack' exact component={BookStack} />
                         <Route path='/detail/:id' exact component={Detail}/>
                         <Route path='/directory/:id' exact component={Directory}/>
                         <Route path='/login' exact component={Login}/>

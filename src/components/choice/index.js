@@ -4,6 +4,7 @@ import ancientc from "../../static/ancientc.png";
 import heartae from "../../static/heartae.png";
 import listc from "../../static/listc.png";
 import rechargec from "../../static/rechargec.png";
+import { Link } from "react-router-dom";
 import './index.css';
 
 class Choice extends React.Component {
@@ -11,12 +12,12 @@ class Choice extends React.Component {
         return (
             <ul className="icon-list page current">
                 <li className="icon">
-                    <a href="https://www.baidu.com/">
+                    <Link to={'/bookStack'}>
                         <div className="div-a">
                             <img src={book_stored} className="img-a" alt=""/>
                         </div>
                         <div className="text-a">书库</div>
-                    </a>
+                    </Link>
                 </li>
                 <li className="icon">
                     <a href="https://www.baidu.com/">
