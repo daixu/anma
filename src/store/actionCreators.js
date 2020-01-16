@@ -37,6 +37,11 @@ export const initUserInfo = (data) => ({
     data: fromJS(data)
 });
 
+export const initBookStack = (data) => ({
+    type: constants.GET_BOOK_STACK,
+    data: fromJS(data)
+});
+
 export const getChoiceList = (userId, pageIndex) => {
     return (dispatch) => {
         axios.get('/api/newbookinfo/get-selectmodule', {
@@ -182,6 +187,28 @@ export const loadUserInfo = (userId) => {
         }).then((response) => {
             const data = response.data;
             const action = initUserInfo(data.data);
+            dispatch(action);
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+};
+
+export const loadBookStack = (userId, maleChannel) => {
+    return (dispatch) => {
+        axios.get('/api/configure/get-superclassfig', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                malechannel: maleChannel,
+                channel: 1001
+            },
+        }).then((response) => {
+            const data = response.data;
+            console.log('data= ', data);
+            const action = initBookStack(data.data);
             dispatch(action);
         }).catch(() => {
             console.log("error")

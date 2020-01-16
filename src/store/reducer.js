@@ -35,6 +35,8 @@ const defaultState = fromJS({
         comdata:[]
     },
     dataUserInfo: {
+    },
+    dataBookStack: {
 
     },
     index: 0,
@@ -67,6 +69,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_USER_INFO) {
         return state.set('dataUserInfo', action.data);
+    }
+
+    if (action.type === constants.GET_BOOK_STACK) {
+        return state.set('dataBookStack', action.data);
     }
     return state;
 }
