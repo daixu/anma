@@ -6,12 +6,11 @@ import {loadBookStack} from "../../store/actionCreators";
 class BookStackBoy extends React.Component {
 
     render() {
-        {console.log('data= ', this.props.dataBookStack.get('classdata'))}
         return (
             <ListWrap>
                 {
-                    this.props.dataBookStack.get('classdata') === undefined ? <div></div> :
-                        this.props.dataBookStack.get('classdata').map(function (item, index) {
+                    this.props.dataBookStackBoy.get('classdata') === undefined ? <div></div> :
+                        this.props.dataBookStackBoy.get('classdata').map(function (item, index) {
                         return (
                             <ListItem key={item.get('classid')}>
                                 <ImageWrap src={item.get('classimage')}/>
@@ -31,7 +30,7 @@ class BookStackBoy extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        dataBookStack: state.get('dataBookStack')
+        dataBookStackBoy: state.get('dataBookStackBoy')
     }
 };
 

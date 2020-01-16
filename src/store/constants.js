@@ -5,4 +5,5 @@ export const GET_DETAIL = 'GET_DETAIL';
 export const GET_COMMENT = 'GET_COMMENT';
 export const GET_DIRECTORY = 'GET_DIRECTORY';
 export const GET_USER_INFO = 'GET_USER_INFO';
-export const GET_BOOK_STACK = 'GET_BOOK_STACK';
+export const GET_BOOK_STACK_BOY = 'GET_BOOK_STACK_BOY';
+export const GET_BOOK_STACK_GIRL = 'GET_BOOK_STACK_GIRL';

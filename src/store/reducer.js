@@ -36,7 +36,10 @@ const defaultState = fromJS({
     },
     dataUserInfo: {
     },
-    dataBookStack: {
+    dataBookStackBoy: {
+
+    },
+    dataBookStackGirl: {
 
     },
     index: 0,
@@ -71,8 +74,12 @@ export default (state = defaultState, action) => {
         return state.set('dataUserInfo', action.data);
     }
 
-    if (action.type === constants.GET_BOOK_STACK) {
-        return state.set('dataBookStack', action.data);
+    if (action.type === constants.GET_BOOK_STACK_BOY) {
+        return state.set('dataBookStackBoy', action.data);
+    }
+
+    if (action.type === constants.GET_BOOK_STACK_GIRL) {
+        return state.set('dataBookStackGirl', action.data);
     }
     return state;
 }

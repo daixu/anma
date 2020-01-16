@@ -37,8 +37,13 @@ export const initUserInfo = (data) => ({
     data: fromJS(data)
 });
 
-export const initBookStack = (data) => ({
-    type: constants.GET_BOOK_STACK,
+export const initBookStackBoy = (data) => ({
+    type: constants.GET_BOOK_STACK_BOY,
+    data: fromJS(data)
+});
+
+export const initBookStackGirl = (data) => ({
+    type: constants.GET_BOOK_STACK_GIRL,
     data: fromJS(data)
 });
 
@@ -208,8 +213,13 @@ export const loadBookStack = (userId, maleChannel) => {
         }).then((response) => {
             const data = response.data;
             console.log('data= ', data);
-            const action = initBookStack(data.data);
-            dispatch(action);
+            if (maleChannel === 0) {
+                const action = initBookStackBoy(data.data);
+                dispatch(action);
+            } else {
+                const action = initBookStackGirl(data.data);
+                dispatch(action);
+            }
         }).catch(() => {
             console.log("error")
         })
