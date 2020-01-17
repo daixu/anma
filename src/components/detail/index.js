@@ -29,7 +29,9 @@ class Detail extends React.Component {
     }
 
     async getDetail(userId, bookId) {
-        // this.props.sta
+        this.setState({
+            animating: true
+        });
         await axios.get('/api/bookinfo/get-bookdetails', {
             headers: {
                 'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
@@ -45,7 +47,8 @@ class Detail extends React.Component {
             const data = response.data;
             this.setState({
                 detailsdata: data.data.detailsdata,
-                likedata: data.data.likedata
+                likedata: data.data.likedata,
+                animating: false
             })
         }).catch(() => {
             console.log("error")
@@ -66,7 +69,6 @@ class Detail extends React.Component {
             this.setState({
                 sumreplycount: data.data.sumreplycount,
                 comdata: data.data.comdata,
-                animating: false
             })
         }).catch(() => {
             console.log("error")
@@ -80,7 +82,7 @@ class Detail extends React.Component {
             likedata: [],
             sumreplycount: 0,
             comdata: [],
-            animating: true
+            animating: false
         };
     }
 
