@@ -18,6 +18,7 @@ class App extends React.Component {
                 <Provider store={store}/>
                 <BrowserRouter>
                     <div>
+                        <Route path='/' exact component={Main} />
                         <Route path='/index' exact component={Main} />
                         <Route path='/bookStack' exact component={BookStack} />
                         <Route path='/detail/:id' exact component={Detail}/>

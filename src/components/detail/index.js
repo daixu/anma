@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.css';
 import default_book_cover from './../../static/default_bookcover.jpg';
-import {Button} from "antd-mobile";
+import {Button, ActivityIndicator} from "antd-mobile";
 import img_back from './../../static/img_back.png';
 import {Link} from "react-router-dom";
 import arrow from "../../static/arrow.png";
@@ -11,12 +11,6 @@ import Like from "../like";
 import axios from "axios";
 
 class Detail extends React.Component {
-    state = {
-        detailsdata:{},
-        likedata: [],
-        sumreplycount: 0,
-        comdata: []
-    };
     login() {
         this.props.history.push("/login");
     }
@@ -35,6 +29,7 @@ class Detail extends React.Component {
     }
 
     async getDetail(userId, bookId) {
+        // this.props.sta
         await axios.get('/api/bookinfo/get-bookdetails', {
             headers: {
                 'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
@@ -48,7 +43,6 @@ class Detail extends React.Component {
             },
         }).then((response) => {
             const data = response.data;
-            console.log('detail data= ', data);
             this.setState({
                 detailsdata: data.data.detailsdata,
                 likedata: data.data.likedata
@@ -69,20 +63,29 @@ class Detail extends React.Component {
             },
         }).then((response) => {
             const data = response.data;
-            console.log('detail comment data= ', data.data.sumreplycount);
             this.setState({
                 sumreplycount: data.data.sumreplycount,
-                comdata:data.data.comdata
+                comdata:data.data.comdata,
+                animating: false
             })
         }).catch(() => {
             console.log("error")
         })
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            detailsdata:{},
+            likedata: [],
+            sumreplycount: 0,
+            comdata: [],
+            animating: true
+        };
+    }
+
     render() {
-        const {detailsdata, likedata, comdata, sumreplycount} = this.state;
-        console.log('detailsdata=', detailsdata);
-        console.log('detailsdata=', detailsdata === {});
+        const {detailsdata, likedata, comdata, sumreplycount, animating} = this.state;
         return (
             <div>
                 <div className="nav-cont">
@@ -91,6 +94,12 @@ class Detail extends React.Component {
                         </span>
                     <span className="nav-text">书籍详情</span>
                 </div>
+
+                <ActivityIndicator
+                    toast
+                    text="数据加载中..."
+                    animating={animating}
+                />
 
                 <div className="book-detail-info">
                     <div className="book-img">
