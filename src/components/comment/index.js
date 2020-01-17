@@ -12,23 +12,23 @@ class Comment extends React.Component {
                     {
                         this.props.data.map(function (item) {
                             return (
-                                <li key={item.get('comid')} className="book-comment-li">
+                                <li key={item.comid} className="book-comment-li">
                                     <div className="book-comment-info">
-                                        <img src={item.get('headimgurl')} alt="avatar" className="book-comment-avatar"/>
+                                        <img src={item.headimgurl} alt="avatar" className="book-comment-avatar"/>
                                         <div className="book-comment-detail">
-                                            <p className="book-comment-title">{item.get('nickname')}</p>
-                                            <p className="book-comment-content">{item.get('comment')}</p>
+                                            <p className="book-comment-title">{item.nickname}</p>
+                                            <p className="book-comment-content">{item.comment}</p>
                                             <div className="book-other-info">
-                                                <span className="book-comment-time">{item.get('creatortime')}</span>
+                                                <span className="book-comment-time">{item.creatortime}</span>
                                                 <div className="book-comment-number-info">
                                                     <img src={icon_like} alt="icon-like"
                                                          className="book-comment-number-img"/>
                                                     <span
-                                                        className="book-comment-number-span">{item.get('pracount')}</span>
+                                                        className="book-comment-number-span">{item.pracount}</span>
                                                     <img src={icon_comment} alt="icon-comment"
                                                          className="book-comment-number-img"/>
                                                     <span
-                                                        className="book-comment-number-span-a">{item.get('replycount')}</span>
+                                                        className="book-comment-number-span-a">{item.replycount}</span>
                                                 </div>
                                             </div>
                                         </div>

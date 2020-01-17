@@ -27,6 +27,10 @@ export const initComment = (data) => ({
     data: fromJS(data)
 });
 
+export const resetDetailData = () => ({
+    type: constants.RESET_APP
+});
+
 export const initDirectory = (data) => ({
     type: constants.GET_DIRECTORY,
     data: fromJS(data)
@@ -135,6 +139,14 @@ export const loadDetail = (userId, bookId) => {
             console.log("error")
         })
     }
+};
+
+export const resetDetail = () => {
+    return (dispatch) => {
+        const action = resetDetailData();
+        dispatch(action);
+        console.log("resetData")
+    };
 };
 
 export const loadComment = (userId, bookId) => {

@@ -11,12 +11,12 @@ class Like extends React.Component {
                         {
                             this.props.data.map(function (item) {
                                 return (
-                                    <li key={item.get('bookid')} className="book-content">
-                                        <Link to={'/detail/' + item.get('bookid')} className="strong-list-a">
-                                            <img src={item.get('bookcover')} className="img-new-book" alt=""/>
+                                    <li key={item.bookid} className="book-content">
+                                        <Link to={'/detail/' + item.bookid} className="strong-list-a">
+                                            <img src={item.bookcover} className="img-new-book" alt=""/>
 
-                                            <p className="story-title">{item.get('bookname')}</p>
-                                            <p className="story-name">{item.get('author')}&nbsp;著</p>
+                                            <p className="story-title">{item.bookname}</p>
+                                            <p className="story-name">{item.author}&nbsp;著</p>
                                         </Link>
                                     </li>
                                 )

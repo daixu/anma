@@ -56,23 +56,33 @@
     width: 100%;
 }
 
-.detail-book-synopsis {
-    font-size: 14px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    line-height: 1.5rem;
-    height: 6rem;
-    letter-spacing: 0.5px;
-    color: #33373d;
+.book-synopsis {
     margin-top: 8px;
     padding: 0 12.5px;
 }
 
+.detail-book-synopsis {
+    position: relative;
+    width: 100%;
+    max-height: 6rem; /* h*n */
+    line-height: 1.5rem; /* h */
+    overflow: hidden;
+}
+
+.detail-book-synopsis-container {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* n */
+    font-size: 14px; /* w */
+    color: transparent;
+}
+
 .detail-book-synopsis-content {
-    color: #33373d;
+    color: #000;
     display: inline;
     vertical-align: top;
+    font-size: 14px; /* f */
 }
 
 .book-detail-content {

@@ -2,16 +2,21 @@ import React from 'react';
 
 import './index.css';
 import default_book_cover from './../../static/default_bookcover.jpg';
-import {connect} from 'react-redux';
-import {loadDetail, loadComment} from './../../store/actionCreators.js';
 import {Button} from "antd-mobile";
 import img_back from './../../static/img_back.png';
 import {Link} from "react-router-dom";
 import arrow from "../../static/arrow.png";
 import Comment from './../comment';
 import Like from "../like";
+import axios from "axios";
 
 class Detail extends React.Component {
+    state = {
+        detailsdata:{},
+        likedata: [],
+        sumreplycount: 0,
+        comdata: []
+    };
     login() {
         this.props.history.push("/login");
     }
@@ -29,9 +34,55 @@ class Detail extends React.Component {
         }
     }
 
+    async getDetail(userId, bookId) {
+        await axios.get('/api/bookinfo/get-bookdetails', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                channel: 1001,
+                platform: 2,
+                bookid: bookId,
+                clicktype: 101
+            },
+        }).then((response) => {
+            const data = response.data;
+            console.log('detail data= ', data);
+            this.setState({
+                detailsdata: data.data.detailsdata,
+                likedata: data.data.likedata
+            })
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+
+    async getComment(userId, bookId) {
+        await axios.get('/api/comment/get-comdata', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                bookid: bookId
+            },
+        }).then((response) => {
+            const data = response.data;
+            console.log('detail comment data= ', data.data.sumreplycount);
+            this.setState({
+                sumreplycount: data.data.sumreplycount,
+                comdata:data.data.comdata
+            })
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+
     render() {
-        const detailsData = this.props.dataDetail.get('detailsdata');
-        console.log('detailsData= ', detailsData);
+        const {detailsdata, likedata, comdata, sumreplycount} = this.state;
+        console.log('detailsdata=', detailsdata);
+        console.log('detailsdata=', detailsdata === {});
         return (
             <div>
                 <div className="nav-cont">
@@ -43,14 +94,14 @@ class Detail extends React.Component {
 
                 <div className="book-detail-info">
                     <div className="book-img">
-                        <img src={detailsData.get('bookcover') || default_book_cover} alt=""
+                        <img src={detailsdata.bookcover || default_book_cover} alt=""
                              className="book-cover"/>
                         <div className="book-info">
-                            <p className="book-title">{detailsData.get('bookname')}</p>
-                            <p className="book-author">作者: {detailsData.get('author')}</p>
-                            <p className="book-author">类别: {detailsData.get('classname')}</p>
-                            <p className="book-author">字数: {detailsData.get('wordnumbers')} | {detailsData.get('serstatus')}</p>
-                            <p className="book-author">点击: {detailsData.get('clicknumber')}</p>
+                            <p className="book-title">{detailsdata.bookname}</p>
+                            <p className="book-author">作者: {detailsdata.author}</p>
+                            <p className="book-author">类别: {detailsdata.classname}</p>
+                            <p className="book-author">字数: {detailsdata.wordnumbers} | {detailsdata.serstatus}</p>
+                            <p className="book-author">点击: {detailsdata.clicknumber}</p>
                         </div>
                     </div>
                 </div>
@@ -66,12 +117,16 @@ class Detail extends React.Component {
                         }} onClick={() => this.login()}>加入书架</Button>
                     </div>
 
-                    <div className="detail-book-synopsis">
-                        <div className="detail-book-synopsis-content">内容简介:{detailsData.get('synopsis')}</div>
+                    <div className="book-synopsis">
+                        <div className="detail-book-synopsis">
+                            <div className="detail-book-synopsis-container">
+                                <div className="detail-book-synopsis-content">内容简介:{detailsdata.synopsis}</div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="book-detail-catalog">
-                        <Link to={'/directory/' + detailsData.get('bookid')} className="book-detail-catalog-a">
+                        <Link to={'/directory/' + detailsdata.bookid} className="book-detail-catalog-a">
                             <span>目录</span>
                             <span className="book-detail-arrow">
                                 <img src={arrow} alt="next"/>
@@ -82,13 +137,13 @@ class Detail extends React.Component {
                     <div className="book-detail-middle">
                         <Link className="book-detail-comment" to={'/index'}>
                             <span className="book-detail-comment-header">书评区</span>
-                            <span className="book-detail-comment-number">{this.props.dataComment.get('sumreplycount')}人评论</span>
+                            <span className="book-detail-comment-number">{sumreplycount}人评论</span>
                             <span className="book-detail-arrow">
                                 <img src={arrow} alt="next"/>
                             </span>
                         </Link>
 
-                        <Comment data={this.props.dataComment.get('comdata')}/>
+                        <Comment data={comdata}/>
 
                         <Link className="book-detail-comment" to={'/index'}>
                             <span className="book-detail-comment-header">猜你喜欢</span>
@@ -97,7 +152,7 @@ class Detail extends React.Component {
                             </span>
                         </Link>
 
-                        <Like data={this.props.dataDetail.get('likedata')}/>
+                        <Like data={likedata}/>
                     </div>
                 </div>
             </div>
@@ -106,33 +161,9 @@ class Detail extends React.Component {
 
     componentDidMount() {
         const bookId = this.props.match.params.id;
-        this.props.initDetail(bookId);
-        this.props.initComment(bookId);
-    }
-
-    componentWillUnmount() {
+        this.getDetail(28519, bookId);
+        this.getComment(28519, bookId);
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        dataDetail: state.get('dataDetail'),
-        dataComment: state.get('dataComment')
-    }
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        initDetail(bookId) {
-            const action = loadDetail(28519, bookId);
-            dispatch(action);
-        },
-
-        initComment(bookId) {
-            const action = loadComment(28519, bookId);
-            dispatch(action);
-        }
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default (Detail);

@@ -81,5 +81,9 @@ export default (state = defaultState, action) => {
     if (action.type === constants.GET_BOOK_STACK_GIRL) {
         return state.set('dataBookStackGirl', action.data);
     }
+
+    if (action.type === constants.RESET_APP) {
+        return state.set('dataDetail', defaultState);
+    }
     return state;
 }
