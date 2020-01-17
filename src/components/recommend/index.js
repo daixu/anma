@@ -10,12 +10,12 @@ class Recommend extends React.Component {
             <div>
                 <div className="recommend-header">
                     <div className="recommend-title">
-                        <a href="http://www.baidu.com" className="next">
+                        <Link to={'/bookList'} className="next">
                             <p>强力推荐</p>
                             <span className="arrow">
                                 <img src={arrow} alt="next"/>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="recommend-list">

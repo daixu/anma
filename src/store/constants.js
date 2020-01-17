@@ -8,3 +8,4 @@ export const GET_USER_INFO = 'GET_USER_INFO';
 export const GET_BOOK_STACK_BOY = 'GET_BOOK_STACK_BOY';
 export const GET_BOOK_STACK_GIRL = 'GET_BOOK_STACK_GIRL';
 export const RESET_APP = 'RESET_APP';
+export const GET_BOOK_LIST = 'GET_BOOK_LIST';

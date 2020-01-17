@@ -37,10 +37,11 @@ const defaultState = fromJS({
     dataUserInfo: {
     },
     dataBookStackBoy: {
-
     },
     dataBookStackGirl: {
-
+    },
+    dataBookList: {
+        pagedata:[]
     },
     index: 0,
 });
@@ -80,6 +81,10 @@ export default (state = defaultState, action) => {
 
     if (action.type === constants.GET_BOOK_STACK_GIRL) {
         return state.set('dataBookStackGirl', action.data);
+    }
+
+    if (action.type === constants.GET_BOOK_LIST) {
+        return state.set('dataBookList', action.data);
     }
 
     if (action.type === constants.RESET_APP) {

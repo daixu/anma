@@ -51,6 +51,11 @@ export const initBookStackGirl = (data) => ({
     data: fromJS(data)
 });
 
+export const initBookList = (data) => ({
+    type: constants.GET_BOOK_LIST,
+    data: fromJS(data)
+});
+
 export const getChoiceList = (userId, pageIndex) => {
     return (dispatch) => {
         axios.get('/api/newbookinfo/get-selectmodule', {
@@ -232,6 +237,31 @@ export const loadBookStack = (userId, maleChannel) => {
                 const action = initBookStackGirl(data.data);
                 dispatch(action);
             }
+        }).catch(() => {
+            console.log("error")
+        })
+    }
+};
+
+export const loadBookList = (userId, page, pageSize, moduleId, maleChannel) => {
+    return (dispatch) => {
+        axios.get('/api/newbookinfo/get-bookmodulepage', {
+            headers: {
+                'accounttoken': 'c0bc5c335284998f4520de0c47ccc8bf',
+            },
+            params: {
+                userid: userId,
+                page: page,
+                pagesize: pageSize,
+                moduleId: moduleId,
+                malechannel: maleChannel,
+                channel: 1001
+            },
+        }).then((response) => {
+            const data = response.data;
+            console.log('data= ', data);
+            const action = initBookList(data.data);
+            dispatch(action);
         }).catch(() => {
             console.log("error")
         })

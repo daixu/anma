@@ -7,8 +7,9 @@ import Login from './components/login';
 import Register from './components/register/index';
 import RegisterNext from './components/register/registerNext';
 import BookStack from './components/bookstack';
+import BookList from './components/booklist';
 import store from './store';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -26,7 +27,7 @@ class App extends React.Component {
                         <Route path='/login' exact component={Login}/>
                         <Route path='/register' exact component={Register}/>
                         <Route path='/registerNext' exact component={RegisterNext}/>
-                        {/*<Redirect path="/" to={{pathname: '/index'}} />*/}
+                        <Route path='/bookList' exact component={BookList}/>
                     </div>
                 </BrowserRouter>
             </div>
