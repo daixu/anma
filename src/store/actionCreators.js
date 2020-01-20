@@ -53,7 +53,7 @@ export const initBookStackGirl = (data) => ({
 
 export const initBookList = (data) => ({
     type: constants.GET_BOOK_LIST,
-    data: fromJS(data)
+    data: data
 });
 
 export const getChoiceList = (userId, pageIndex) => {

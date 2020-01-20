@@ -107,6 +107,21 @@
     display: inline-block;
 }
 
+.layout-flow-more span {
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+}
+
+.layout-flow-more span cite {
+    padding: 0 20px;
+    border-radius: 3px;
+    background-color: #eee;
+    color: #333;
+    font-style: normal;
+    display: inline-block;
+}
+
 .choice-more-book-info {
     width: 100%;
     position: relative;
