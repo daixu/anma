@@ -13,7 +13,7 @@ class BookList extends React.Component {
     }
 
     async getMore() {
-        this.loadBookList(28519, ++this.state.pageIndex, 5, 2, 2);
+        this.loadBookList(28519, ++this.state.pageIndex, 10, 2, 2);
     }
 
     async loadBookList(userId, page, pageSize, moduleId, maleChannel) {
@@ -116,7 +116,7 @@ class BookList extends React.Component {
     }
 
     componentDidMount() {
-        this.loadBookList(28519, this.state.pageIndex, 5, 2, 2);
+        this.loadBookList(28519, this.state.pageIndex, 10, 2, 2);
     }
 }
 
