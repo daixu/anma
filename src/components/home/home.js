@@ -9,7 +9,7 @@ import ChoiceMore from './../choicemore';
 import Banner from './../banner';
 
 import {connect} from 'react-redux';
-import {getChoiceList, loadBanner, loadMoreList} from './../../store/actionCreators.js';
+import {getChoiceList, loadBanner} from './../../store/actionCreators.js';
 
 class Home extends React.Component {
 
@@ -30,7 +30,7 @@ class Home extends React.Component {
                   <Recommend data={this.props.dataObj.get('heavydata')}/>
                   <BestsellerList data={this.props.dataObj.get('searchdata')}/>
                   <NewBook data={this.props.dataObj.get('completedata')}/>
-                  <ChoiceMore data={this.props.dataMore.get('pagedata')}/>
+                  <ChoiceMore />
                 </div>
             </div>
         )
@@ -38,7 +38,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.initList();
-        this.props.loadMoreList();
         this.props.loadBanner();
     }
 }
@@ -46,7 +45,6 @@ class Home extends React.Component {
 const mapStateToProps = (state) => {
     return {
         dataObj: state.get('dataObj'),
-        dataMore: state.get('dataMore'),
         dataBanner: state.get('dataBanner')
     }
 };
@@ -62,11 +60,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             const action = getChoiceList(28519,2);
             dispatch(action);
         },
-
-        loadMoreList() {
-            const action = loadMoreList(28519,1, 2);
-            dispatch(action);
-        }
     }
 };
 
